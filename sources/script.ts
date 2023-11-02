@@ -3,7 +3,7 @@ const nextJokeButton = document.getElementById("nextJoke");
 
 
 nextJokeButton?.addEventListener('click', nextJoke);
-window.addEventListener('load', function (event) {
+window.addEventListener('load', (event) => {
     nextJoke();
 });
 
