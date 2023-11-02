@@ -1,9 +1,23 @@
 "use strict";
 const firstJoke = document.getElementById("firstJoke");
 const nextJokeButton = document.getElementById("nextJoke");
-nextJokeButton === null || nextJokeButton === void 0 ? void 0 : nextJokeButton.addEventListener('click', nextJoke);
-window.addEventListener('load', function (event) {
+const reportJokes = [];
+const scoreButtons = document.querySelectorAll(".score-button");
+window.addEventListener('load', (event) => {
     nextJoke();
+});
+nextJokeButton === null || nextJokeButton === void 0 ? void 0 : nextJokeButton.addEventListener('click', nextJoke);
+scoreButtons.forEach(button => {
+    button.addEventListener('click', event => {
+        const target = event.target;
+        if (target && target instanceof HTMLElement) {
+            const selectedScore = parseInt(target.dataset.score || '0');
+            const currentJoke = reportJokes[reportJokes.length - 1];
+            currentJoke.score = selectedScore;
+            console.log(`Joke score: ${selectedScore}`);
+        }
+        console.log(reportJokes);
+    });
 });
 function nextJoke() {
     const options = {
@@ -13,9 +27,15 @@ function nextJoke() {
     };
     fetch("https://icanhazdadjoke.com/", options)
         .then(res => res.json())
-        .then(data => {
+        .then((data) => {
+        const newJoke = {
+            joke: data.joke,
+            score: 0,
+            date: new Date().toISOString()
+        };
+        reportJokes.push(newJoke);
+        console.log(newJoke);
         firstJoke.textContent = data.joke;
-        console.log(data.joke);
     });
 }
 //# sourceMappingURL=script.js.map
