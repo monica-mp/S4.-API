@@ -52,4 +52,7 @@ button{
     
 }
 
-
+#weather{
+    position: absolute;
+    margin: 10px 10px;
+}
