@@ -1,58 +1,145 @@
+*{
+    font-size: 62.5%; /*Tamany font base 10px*/
+}
 html, body{
-    margin: 0;    
+    margin: 0; 
+    padding: 0;   
     box-sizing: border-box; 
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 18px;    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+    height: 100%;      
 }
-
-img {
-    position: absolute;
-    background-position: center;    
-    background-repeat: no-repeat;
-    width: 100%;
+.content{
+    background-image: url("../images/fons.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    text-align: center;    
     height: 100%;
-    z-index: -1;
-    opacity: 0.5;
+    
 }
-
-.card {
+.card{        
+    background-image: url("../svg/1.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    min-height: 20rem;
+    max-height: 20rem;
+    min-width: 30rem;
+    max-width: 60rem;
+    padding: 15rem 0 10rem 0;
+    margin: 0 auto;     
+}
+.card-content{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #fdffe6;
-    position: absolute;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 10px;
     text-align: center;
-    padding: 50px 60px;
-    min-width: 500px;
-    max-width: 500px;
-    min-height: 400px;
-    max-height: 400px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);   
+    min-height: 20rem;
+    max-height: 20rem;
+    min-width: 30rem;
+    max-width: 50rem; 
+         
 }
-
-.card > p{
+.card-content > p{
+    font-size: 1.8rem;
     font-weight: bold;     
-    min-height: 100px;  
-      
-}
-
-button{      
-    padding: 10px 40px;    
-    border-radius: 10px;
-    background-color: rgb(60, 211, 231);
-    border: none;
+    max-height: 10rem; 
+    max-width: 28rem;
     color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 18px; 
-    
+    margin: 0;     
 }
-
+h1{
+    font-size: 2.4rem;
+    margin: 0;
+}
+.nextJokeButton{     
+    box-shadow: 0.2rem 0.2rem 1rem rgb(0, 0, 0);
+    background-color: rgb(90, 75, 233);
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.8rem; 
+    cursor: pointer;
+    color: white;    
+}
 #weather{
     position: absolute;
-    margin: 10px 10px;
+    margin: 1rem 1rem;
+    font-size: 1.6rem;
 }
+.buttons{    
+    display: flex;
+    gap: 1rem;    
+}
+.buttons > .score-button{
+   background: none;
+   border: none;
+   cursor: pointer; 
+   padding: 0;   
+}
+.buttons > .score-button > img{
+   width: 5rem;   
+}
+
+/*-----Media queries----*/
+@media only screen and (min-width: 768px) {
+    .card{               
+        max-width: 80rem;
+        padding: 20rem 0 30rem 0;          
+    }
+    .card-content{        
+        min-height: 35rem;
+        max-height: 20rem;
+        min-width: 30rem;
+        max-width: 80rem;              
+    }
+    .card-content > p{
+        font-size: 2.4rem;       
+        max-width: 40rem;             
+    }
+    h1{
+        font-size: 3.2rem;
+    }
+    .nextJokeButton{     
+        font-size: 2.4rem;   
+    }
+    #weather{        
+        font-size: 2rem;
+    }
+    .buttons{            
+        gap: 3rem;    
+    }
+    .buttons > .score-button > img{
+        width: 8rem;   
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .card{               
+        max-width: 65rem;
+        min-height: 36rem;
+        padding: 24rem 0 14rem 0;   
+        margin: 0 auto; 
+    }
+    
+    
+    .card-content{        
+        min-height: 32rem;
+        margin: 0 auto; 
+    }
+    .card-content > p{
+        font-size: 2.4rem;       
+        max-width: 50rem;             
+    }
+    h1{
+        font-size: 3.2rem;
+    }
+    .nextJokeButton{     
+        font-size: 2.4rem;   
+    }
+    .buttons > .score-button > img{
+        width: 6rem;   
+    }
+}    

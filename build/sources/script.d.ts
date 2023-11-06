@@ -1,6 +1,7 @@
 declare const firstJoke: HTMLElement;
 declare const nextJokeButton: HTMLElement | null;
 declare const weather: HTMLElement;
+declare const scoreButtons: NodeListOf<Element>;
 declare const apiUrls: string[];
 declare let useFirstApi: boolean;
 interface NewJoke {
@@ -9,6 +10,5 @@ interface NewJoke {
     date: string;
 }
 declare const reportJokes: NewJoke[];
-declare const scoreButtons: NodeListOf<Element>;
 declare function nextJoke(): void;
 declare function getWeather(): void;
